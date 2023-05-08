@@ -1,70 +1,72 @@
-
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta charset="utf-8">
   <title>English to Akano Translator</title>
   <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #ffffff;
-      }
-      h1 {
-        font-size: 2em;
-        text-align: left;
-        color:#9F2747
-        
-      }
-      label {
-        font-size: 1.2em;
-      }
-      input[type="text"] {
-        padding: 8px;
-        font-size: 1.2em;
-        border-radius: 4px;
-      }
-     
-      button {
-        margin-top: 10px;
-        padding: 8px 16px;
-        font-size: 1.2em;
-        background-color: #556B8D;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: #3e8e41;
-      }
-    p {
-    font-size: 0.5em;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
     }
-      #output {
-        margin-top: 20px;
-        font-size: 1.2em;
-        white-space: pre-wrap;
-      }
-    </style>
+    h1 {
+      font-size: 2em;
+      text-align: left;
+      color:#9F2747;
+    }
+    label {
+      font-size: 1.2em;
+    }
+    input[type="text"] {
+      padding: 8px;
+      font-size: 1.2em;
+      border-radius: 6px;
+      margin-right: 10px; /* Add right margin to create space between input and output */
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 1.2em;
+      background-color: #556B8D;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3e8e41;
+    }
+    p {
+      font-size: 0.5em;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 1.2em;
+      white-space: pre-wrap;
+      display: inline-block; /* Add display property to make output appear on the right */
+    }
+    .form-container {
+      display: flex; /* Use flexbox to arrange input and output horizontally */
+      align-items: center; /* Align items vertically in the center */
+    }
+  </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
+  <h1>English to Akano Translator</h1>
 
-  <h1>English to Ʌkʌɳo Translator</h1>
-<p>Note: It is the closest english equivulant, so it is a weird mess, lol idk machine learning<p>
-  
-  <form id="translation-form">
-    <label for="input-text"></label>
-    <input type="text" id="input-text">
-    <button type="submit">Translate</button>
-  </form>
+  <div class="form-container">
+    <form id="translation-form">
+      <label for="input-text"></label>
+      <input type="text" id="input-text">
+      <button type="submit">Translate</button>
+    </form>
 
-  <div id="output"></div>
+    <div id="output"></div>
+  </div>
 
   <script>
     let replacements = {
-      "unknown": "bbkis",
+"unknown": "bbkis",
 "beautiful": "bekŋʌl",
 "belief": "beŋe",
 "easy": "broʌ",
@@ -421,6 +423,8 @@
 "a": "une",
 "have": "viasv",
 "is": "ʌst",
+
+
     };
 
     // handle form submission
@@ -433,6 +437,5 @@
       document.getElementById("output").innerText = outputText;
     });
   </script>
-
 </body>
 </html>
